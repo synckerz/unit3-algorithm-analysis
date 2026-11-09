@@ -2,29 +2,31 @@
 
 ## Test Environment
 
-The tests were performed on the student's personal computer using Python 3.13.14.
+The tests were performed on the student's personal computer.
 
+- Operating system: Windows
 - Processor architecture: AMD64
-- Operating environment: Windows
 - Python version: 3.13.14
 
 ## Performance Measurements
 
-Each data size was tested five times. The average execution time was calculated for both algorithms.
+Each data size was tested five times. The average execution time was calculated for both algorithms. Separate copies of the same randomly generated list were used to ensure a fair comparison.
 
 | Data size | Bubble Sort average (seconds) | Quick Sort average (seconds) |
 |---:|---:|---:|
-| 100 | 0.000418800 | 0.000229700 |
-| 500 | 0.009870580 | 0.000471000 |
-| 1,000 | 0.043605400 | 0.001031060 |
-| 2,000 | 0.200689480 | 0.001978140 |
+| 100 | 0.000356960 | 0.000088880 |
+| 500 | 0.008776560 | 0.000640700 |
+| 1,000 | 0.046256400 | 0.001107720 |
+| 2,000 | 0.193783160 | 0.001949280 |
 
 ## Observations
 
 The results show that Quick Sort was faster than Bubble Sort at all four data sizes in this experiment.
 
-The difference became more noticeable as the data size increased. For 2,000 elements, Bubble Sort took approximately 0.200689 seconds, while Quick Sort took approximately 0.001978 seconds.
+The performance difference became more noticeable as the data size increased. For 2,000 elements, Bubble Sort took approximately 0.193783 seconds, while Quick Sort took approximately 0.001949 seconds.
 
-These measurements depend on the computer and test run, so small differences may occur when the test is repeated. Each repetition creates a random list and passes a copy of the same list to both algorithms.
+This means that Quick Sort was approximately 99.4 times faster than Bubble Sort for the largest data set tested.
 
-The results provide practical evidence of the difference between the average time complexities of Bubble Sort (O(n²)) and Quick Sort (O(n log n)).
+Bubble Sort has an average and worst-case time complexity of O(n²). Quick Sort has an average time complexity of O(n log n), although its worst-case complexity is O(n²) because the first element is selected as the pivot.
+
+The measurements may vary between test runs depending on the computer and execution environment. These results represent the averages obtained during this particular experiment.
