@@ -1,17 +1,48 @@
 # Algorithm Analysis and Implementation
 
 ## 1. Introduction
-Sorting algorithms are used to arrange data in a specific order, for example from the smallest number to the largest number. In this task, I selected Bubble Sort and Quick Sort because they both solve the same problem but use different methods. I wanted to understand how these methods affect performance when the number of items increases.
+
+Sorting algorithms are important in software development because they organise data into a specific order. In this project, I implemented Bubble Sort and Quick Sort using Python. Both algorithms solve the same sorting problem, but they use different approaches. The purpose of this experiment was to compare their performance and understand how algorithm efficiency changes as the amount of data increases.
 
 ## 2. Implementation
-Both algorithms were implemented using Python. Bubble Sort compares two neighbouring numbers and changes their positions when they are in the wrong order. Quick Sort uses a pivot to divide the numbers into smaller groups. In my implementation, the first number is selected as the pivot. The algorithm then sorts the smaller and larger groups using recursion.
+
+Bubble Sort compares adjacent elements and swaps them when they are in the wrong order. It repeatedly passes through the list until the elements are arranged in ascending order.
+
+Quick Sort uses the divide-and-conquer approach. In my implementation, the first element is selected as the pivot. The remaining elements are divided into three groups: smaller, equal and larger. The smaller and larger groups are then sorted recursively.
 
 ## 3. Performance Analysis
-I tested both algorithms with four different data sizes: 100, 500, 1,000 and 2,000 items. Each test was repeated five times, and I calculated the average execution time.
-The results showed that Quick Sort was faster than Bubble Sort in all tests. For 2,000 items, Bubble Sort took approximately 0.200689 seconds, while Quick Sort took approximately 0.001978 seconds.
-For smaller data sets, such as 100 items, the difference in execution time was relatively small. However, as the data size increased, Bubble Sort became much slower. Quick Sort handled the larger data sets more efficiently in my tests.
-Bubble Sort has an average and worst-case time complexity of O(n²). Quick Sort has an average time complexity of O(n log n), but its worst-case complexity is O(n²) because it uses the first item as the pivot. These results show how the choice of algorithm can affect performance when working with larger amounts of data.
 
-## 4. Conclusion
-This experiment helped me understand the relationship between algorithms and performance. Quick Sort was more efficient in my tests, especially with larger data sets. Bubble Sort is still useful for learning basic sorting concepts, but Quick Sort can be a better choice for larger collections under average conditions.
-Sorting algorithms can also be used in real-world applications. For example, an online shopping website may use sorting algorithms to arrange products by price, from lowest to highest. This makes it easier for customers to find the products they want. This task helped me understand why choosing the right algorithm is important when developing software.
+Both algorithms were tested using four different data sizes: 100, 500, 1,000 and 2,000 elements. Each test was repeated five times, and the average execution time was calculated.
+
+The same randomly generated data was provided to both algorithms during each repetition. Separate copies were created before timing to avoid including list-copying time in the measurements.
+
+The results were:
+
+| Data size | Bubble Sort (seconds) | Quick Sort (seconds) |
+|---:|---:|---:|
+| 100 | 0.000356960 | 0.000088880 |
+| 500 | 0.008776560 | 0.000640700 |
+| 1,000 | 0.046256400 | 0.001107720 |
+| 2,000 | 0.193783160 | 0.001949280 |
+
+Quick Sort was faster than Bubble Sort at every tested data size. For 2,000 elements, Quick Sort was approximately 99.4 times faster.
+
+Bubble Sort has an average and worst-case time complexity of O(n²). Quick Sort has an average time complexity of O(n log n), although its worst-case complexity is O(n²). This can happen when the selected pivot repeatedly produces unbalanced partitions.
+
+The experimental results support the theoretical expectation that Quick Sort generally performs better on larger data sets. However, these measurements represent one computer and one experimental environment, so they should not be treated as universal execution times.
+
+## 4. Algorithm Comparison and Selection
+
+Bubble Sort is relatively simple to understand and implement. It is useful for learning basic sorting principles, but its quadratic time complexity makes it less suitable for larger data sets.
+
+Quick Sort is more complex because it uses recursion and partitioning. However, its average time complexity makes it a more efficient choice for larger collections.
+
+Based on the theoretical analysis and the experimental results, I would select Quick Sort for this particular implementation when working with larger data sets. Bubble Sort remains useful for educational purposes and understanding algorithm fundamentals.
+
+## 5. Conclusion
+
+This project helped me understand how algorithm design influences software performance. Implementing and testing two sorting algorithms showed me that different approaches to the same problem can produce significantly different execution times.
+
+I also learned the importance of designing fair performance experiments, using repeated measurements and comparing practical results with theoretical time complexity.
+
+Sorting is relevant to real-world software systems, including e-commerce applications where products may need to be arranged by price, rating or popularity. Choosing an appropriate algorithm can help improve the efficiency and responsiveness of such systems.
